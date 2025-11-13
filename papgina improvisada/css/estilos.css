@@ -1,0 +1,114 @@
+/* estilos.css - Estilo minimalista, mobile-first
+   Paleta pastel: fondo suave y acentos en colores pastel
+   Fuentes: Playfair Display (títulos), Inter (texto)
+*/
+:root{
+  --bg: #f7f8fb; /* fondo muy claro */
+  --surface: #ffffff; /* tarjetas */
+  --accent: #f7b7a3; /* pastel melocotón */
+  --accent-2: #c8e6d8; /* pastel menta */
+  --muted: #8b8b92; /* texto secundario */
+  --text: #2e2e31; /* texto principal */
+  --radius: 12px;
+  --max-width:1100px;
+}
+
+/* Reset ligero */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  margin:0;
+  color:var(--text);
+  background-color:var(--bg);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.container{max-width:var(--max-width);margin:0 auto;padding:1rem}
+
+/* Header - limpio y minimalista */
+.site-header{position:sticky;top:0;background:transparent;padding:.6rem 0;z-index:40}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--text)}
+.brand .logo{width:44px;height:auto;margin-right:.6rem}
+.brand-text{font-family:'Playfair Display', serif;font-weight:600;color:var(--text);letter-spacing:0.2px}
+
+/* Menu hamburguesa */
+.menu-toggle{background:none;border:0;padding:.5rem;display:inline-flex;align-items:center}
+.hamburger{width:26px;height:2px;background:var(--text);position:relative;opacity:.9}
+.hamburger::before,.hamburger::after{content:'';position:absolute;left:0;width:26px;height:2px;background:var(--text);opacity:.9}
+.hamburger::before{top:-7px}
+.hamburger::after{top:7px}
+
+.main-nav{display:none}
+.main-nav ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column}
+.main-nav a{text-decoration:none;color:var(--text);padding:.5rem 0;display:block}
+
+/* Header actions (CTA buttons) */
+.header-actions{display:flex;align-items:center;gap:.6rem}
+.btn-primary{background:var(--accent);color:#fff;padding:.6rem 1.1rem;border-radius:10px;text-decoration:none;border:0;display:inline-block;box-shadow:0 6px 18px rgba(102,96,122,0.06)}
+.btn-outline{background:transparent;color:var(--text);border:1px solid rgba(46,46,49,0.06);padding:.45rem .9rem;border-radius:10px;text-decoration:none}
+
+/* Social icons in footer */
+.social{display:flex;gap:.5rem;align-items:center}
+.social-link{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;background:transparent;border:1px solid rgba(46,46,49,0.04);text-decoration:none}
+.social-link svg{display:block}
+.footer-brand{margin:0;font-family:'Playfair Display', serif}
+.muted{color:var(--muted)}
+
+/* Hero - sencillo */
+.hero{padding:2.25rem 0}
+.hero-inner{display:flex;flex-direction:column;gap:1rem;align-items:center;text-align:center}
+.hero-title{font-family:'Playfair Display', serif;font-size:1.9rem;color:var(--text);margin:0}
+.hero-sub{color:var(--muted);margin:.5rem 0;max-width:48ch}
+.btn-primary{background:var(--accent);color:#fff;padding:.6rem 1.1rem;border-radius:10px;text-decoration:none;border:0;display:inline-block;box-shadow:0 6px 18px rgba(102,96,122,0.06)}
+.btn-secondary{background:transparent;color:var(--text);border:1px solid rgba(46,46,49,0.06);padding:.45rem .9rem;border-radius:10px;text-decoration:none}
+
+.hero-image img{max-width:100%;height:auto;display:block;margin-top:8px}
+
+/* Cards */
+.cards{display:grid;gap:1rem}
+.card{background:var(--surface);border-radius:var(--radius);padding:1rem;display:flex;flex-direction:column;align-items:stretch;transition:transform .22s ease, box-shadow .22s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(36,36,40,0.06)}
+.card-media{background:none;border:0;padding:0;margin:0;width:100%;text-align:left}
+.card-media img{width:100%;height:auto;border-radius:8px}
+.card-body h3{margin:.5rem 0 0;font-family:'Playfair Display', serif;font-weight:400}
+.card-body p{margin:.25rem 0;color:var(--muted)}
+
+/* Newsletter & forms */
+.newsletter-form{display:flex;gap:.5rem;flex-wrap:wrap}
+.newsletter-form input[type="email"]{flex:1;padding:.6rem;border-radius:10px;border:1px solid rgba(46,46,49,0.06);background:transparent}
+.form-feedback{color:var(--text);font-size:.95rem;margin-top:.5rem}
+
+/* Footer */
+.site-footer{border-top:1px solid rgba(46,46,49,0.04);margin-top:2rem;padding:1rem 0;background:transparent}
+.footer-inner{display:flex;gap:1rem;flex-wrap:wrap;justify-content:space-between}
+.footer-col h4{margin:0 0 .5rem}
+.footer-bottom{text-align:center;margin-top:.75rem;color:var(--muted)}
+
+/* Accessibility utilities */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(16,16,18,0.6);z-index:100}
+.lightbox[aria-hidden="false"]{display:flex}
+.lightbox-content img{max-width:88vw;max-height:78vh;border-radius:8px;box-shadow:0 18px 48px rgba(16,16,18,0.25)}
+.lightbox-close{position:absolute;top:1rem;right:1rem;background:transparent;border:0;color:#fff;font-size:1.25rem}
+
+/* Responsive */
+@media(min-width:700px){
+  .main-nav{display:block}
+  .main-nav ul{flex-direction:row;gap:1rem}
+  .menu-toggle{display:none}
+  .hero-inner{flex-direction:row;align-items:center;justify-content:space-between;text-align:left}
+  .hero-title{font-size:2.4rem}
+  .cards{grid-template-columns:repeat(3,1fr)}
+}
+
+@media(min-width:1000px){
+  .hero-title{font-size:3rem}
+}
+
+/* Animaciones suaves */
+.card, .hero-copy, .hero-image{opacity:0;transform:translateY(6px);transition:opacity .6s ease, transform .6s ease}
+.card.visible, .hero-copy.visible, .hero-image.visible{opacity:1;transform:none}
