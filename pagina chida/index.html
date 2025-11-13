@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tienda & Reseñas · Electrónica Minimal</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">ElectroChida</a>
+      <nav class="nav">
+        <a href="#productos">Productos</a>
+        <a href="#reseñas">Reseñas</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <button id="cartBtn" class="btn outline">Carrito (<span id="cartCount">0</span>)</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Electrónica revisada con profesionalismo</h1>
+        <p class="lead">Reseñas honestas y ventas seguras. Diseño minimalista, información clara.</p>
+        <div class="hero-ctas">
+          <a class="btn" href="#productos">Ver productos</a>
+          <a class="btn subtle" href="#reseñas">Leer reseñas</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="productos" class="container section">
+      <h2 class="section-title">Productos destacados</h2>
+      <div class="grid" id="productGrid">
+        <!-- Product cards populated by JS -->
+      </div>
+    </section>
+
+    <section id="reseñas" class="container section">
+      <h2 class="section-title">Reseñas completas</h2>
+      <article class="review">
+        <h3>Audífonos ProSound X1</h3>
+        <div class="rating">⭐⭐⭐⭐☆ <span class="muted">(4.2/5 — 128 reseñas)</span></div>
+        <p>Los ProSound X1 destacan por su comodidad y calidad de sonido neutra. Recomendados para trabajo y ocio.</p>
+        <ul class="proscons">
+          <li><strong>Pros:</strong> sonido equilibrado, buena batería.</li>
+          <li><strong>Contras:</strong> aislamiento medio, precio algo alto.</li>
+        </ul>
+        <h4>Especificaciones</h4>
+        <table class="specs">
+          <tr><th>Conectividad</th><td>Bluetooth 5.2</td></tr>
+          <tr><th>Batería</th><td>30 horas</td></tr>
+          <tr><th>Peso</th><td>230 g</td></tr>
+        </table>
+      </article>
+
+      <div class="write-review">
+        <h4>Deja tu reseña</h4>
+        <form id="reviewForm">
+          <label>Producto
+            <select id="reviewProduct">
+              <option value="psx1">ProSound X1</option>
+            </select>
+          </label>
+          <label>Valoración
+            <select id="reviewRating">
+              <option value="5">5</option>
+              <option value="4">4</option>
+              <option value="3">3</option>
+              <option value="2">2</option>
+              <option value="1">1</option>
+            </select>
+          </label>
+          <label>Comentario
+            <textarea id="reviewText" rows="4" placeholder="Comparte tu experiencia..."></textarea>
+          </label>
+          <div>
+            <button class="btn" type="submit">Enviar reseña</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> ElectroChida</div>
+      <div class="muted">Diseño minimalista · Pago seguro · Envíos rápidos</div>
+    </div>
+  </footer>
+
+  <div id="cartModal" class="modal" aria-hidden="true">
+    <div class="modal-panel">
+      <header>
+        <h3>Tu carrito</h3>
+        <button id="closeCart" class="btn subtle">Cerrar</button>
+      </header>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-empty muted" id="cartEmpty">El carrito está vacío.</div>
+      <div class="cart-footer" id="cartFooter">
+        <div class="total">Total: $<span id="cartTotal">0.00</span></div>
+        <div style="display:flex;gap:8px">
+          <button id="checkoutBtn" class="btn" disabled>Pagar</button>
+          <button id="clearCartBtn" class="btn subtle">Vaciar</button>
+        </div>
+      </div>
+
+      <div id="checkoutForm" class="checkout-form" aria-hidden="true" style="display:none;margin-top:12px">
+        <h4>Formulario de compra</h4>
+        <form id="checkoutFormEl">
+          <label>Nombre completo
+            <input id="buyerName" required />
+          </label>
+          <label>Correo electrónico
+            <input id="buyerEmail" type="email" required />
+          </label>
+          <label>Dirección
+            <input id="buyerAddress" required />
+          </label>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button type="submit" class="btn">Confirmar compra</button>
+            <button type="button" id="backToCart" class="btn subtle">Volver</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
