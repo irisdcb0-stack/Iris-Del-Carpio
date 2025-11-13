@@ -1,147 +1,165 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>KOU COFE — Inicio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Meta tags básicos para SEO y accesibilidad -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Pastelería y repostería con estilo barroco: tortas artesanales, recetas y productos premium.">
+  <meta name="keywords" content="pastelería, repostería, tartas, repostería artesanal, recetas">
+  <title>La Confitería Barroca — Pastelería & Repostería</title>
+
+  <!-- Fuentes web: serif limpia para títulos y sans neutra para texto (minimalista) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Estilos principales -->
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand"><a href="index.html">KOU COFE</a></div>
-    <nav class="nav">
-      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
-      <ul class="nav-list">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="tienda.html">Tienda</a></li>
-        <li><a href="historial.html">Historial</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-    <a class="cart-link" href="carrito.html" aria-label="Carrito">
-      🛒 <span id="cart-count">0</span>
-    </a>
+  <!-- Header / Navegación semántica -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Inicio - La Confitería Barroca">
+        <img src="images/logo.svg" alt="Logo La Confitería Barroca" class="logo">
+        <span class="brand-text">La Confitería Barroca</span>
+      </a>
+
+      <nav id="main-nav" class="main-nav" role="navigation" aria-label="Principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="recetas.html">Recetas</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn-outline" href="productos.html" aria-label="Ir a la tienda">Tienda</a>
+        <a class="btn-primary" href="contacto.html" aria-label="Realizar un pedido">Pedidos</a>
+        <button id="btnMenu" class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú">
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
   </header>
 
-  <main class="home-main">
-    <!-- Hero Section -->
-    <section class="hero slide-in">
-      <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1498804103079-a6351b050096?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
-      <div class="hero-inner">
-        <div class="hero-content fade-in">
-          <h1 class="hero-title">El arte del café de especialidad</h1>
-          <p class="hero-sub">Descubre el mundo del café de alta calidad, donde cada grano cuenta una historia única de origen, cultivo y tostado artesanal.</p>
-          <a href="tienda.html" class="hero-cta pulse">Explorar Nuestra Selección →</a>
+  <!-- Main content -->
+  <main id="main" class="site-main" role="main">
+    <!-- Hero llamativo -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero-inner container">
+        <div class="hero-copy">
+          <h1 class="hero-title">Sabores que cuentan historias</h1>
+          <p class="hero-sub">Pastelería y repostería artesanal con inspiración barroca — ornamentos, sabores clásicos y técnica moderna.</p>
+          <p><a class="btn-primary" href="productos.html">Ver Productos</a></p>
         </div>
+        <figure class="hero-image" aria-hidden="true">
+          <img src="images/hero.svg" alt="Tarta barroca destacada"/>
+        </figure>
       </div>
     </section>
 
-    <!-- Specialty Coffee Info -->
-    <section class="specialty-info fade-in">
-      <h2 class="section-title">¿Qué es el Café de Especialidad?</h2>
-      <div class="info-grid">
-        <div class="info-card">
-          <img src="https://images.unsplash.com/photo-1501747315-124a0eaca060?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-               alt="Plantación de café en altura"
-               loading="lazy">
-          <h3>Origen Premium</h3>
-          <p>Cultivado en altitudes superiores a 1,200 metros, nuestro café proviene de las mejores regiones productoras del mundo.</p>
-        </div>
-        <div class="info-card">
-          <img src="https://tse1.mm.bing.net/th/id/OIP.DgEI6haYTOMTKr-dy7UQyQHaEC?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" 
-               alt="Proceso de selección de granos de café"
-               loading="lazy">
-          <h3>Proceso Artesanal</h3>
-          <p>Cosecha selectiva y procesamiento controlado que preserva las características únicas de cada origen.</p>
-        </div>
-        <div class="info-card">
-          <img src="https://images.unsplash.com/photo-1608346128025-1896b97a6fa7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-               alt="Proceso de tostado de café"
-               loading="lazy">
-          <h3>Tostado Perfecto</h3>
-          <p>Tostado en pequeños lotes para garantizar el desarrollo óptimo de aromas y sabores.</p>
-        </div>
+    <!-- Sección: Destacados / Productos -->
+    <section class="section container" aria-labelledby="destacados-title">
+      <h2 id="destacados-title" class="section-title">Productos Destacados</h2>
+      <div class="cards">
+        <!-- Tarjetas de producto - usan lightbox al hacer click en la imagen -->
+        <article class="card">
+          <button class="card-media" data-img="images/cake1.svg" aria-label="Ver torta carmesí">
+            <img src="images/cake1.svg" alt="Torta carmesí"/>
+          </button>
+          <div class="card-body">
+            <h3>Torta Carmesí</h3>
+            <p>Tarta de frutos rojos con crema de almendra y detalles dorados.</p>
+            <a class="btn-secondary" href="productos.html">Más detalles</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <button class="card-media" data-img="images/cake2.svg" aria-label="Ver pastel dorado">
+            <img src="images/cake2.svg" alt="Pastel dorado"/>
+          </button>
+          <div class="card-body">
+            <h3>Pastel Dorado</h3>
+            <p>Bizcocho de vainilla infusionado con miel y glaseado real.</p>
+            <a class="btn-secondary" href="productos.html">Más detalles</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <button class="card-media" data-img="images/cake3.svg" aria-label="Ver tarta de crema">
+            <img src="images/cake3.svg" alt="Tarta de crema"/>
+          </button>
+          <div class="card-body">
+            <h3>Tarta de Crema Real</h3>
+            <p>Clásico relleno de crema pastelera y frutos cristalizados.</p>
+            <a class="btn-secondary" href="productos.html">Más detalles</a>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- Quality Scale -->
-    <section class="quality-scale slide-in">
-      <h2 class="section-title">Escala de Calidad</h2>
-      <div class="scale-container">
-        <div class="scale-item active">
-          <span class="score">80+</span>
-          <span class="label">Café Premium</span>
-        </div>
-        <div class="scale-item active">
-          <span class="score">84+</span>
-          <span class="label">Café de Especialidad</span>
-        </div>
-        <div class="scale-item highlight">
-          <span class="score">88+</span>
-          <span class="label">KOU COFE Select</span>
-        </div>
-      </div>
-      <p class="scale-note">Solo seleccionamos granos con puntuación superior a 88 puntos en la escala SCA.</p>
+    <!-- Newsletter / Form sencillo -->
+    <section class="newsletter container" aria-labelledby="newsletter-title">
+      <h2 id="newsletter-title">Suscríbete a nuestro boletín</h2>
+      <form id="newsletter-form" class="newsletter-form" novalidate>
+        <label for="newsletter-email" class="sr-only">Correo electrónico</label>
+        <input id="newsletter-email" name="email" type="email" placeholder="tu@correo.com" required aria-required="true">
+        <button type="submit" class="btn-primary">Suscribirse</button>
+        <p class="form-feedback" aria-live="polite"></p>
+      </form>
     </section>
 
-    <!-- CTA Section -->
-    <section class="home-cta fade-in" style="background-image: url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
-      <div class="cta-overlay"></div>
-      <div class="cta-content">
-        <h2>Comienza tu viaje en el café de especialidad</h2>
-        <p>Explora nuestra selección de granos premium y equipos profesionales.</p>
-        <a class="btn btn-primary pulse" href="tienda.html">Descubrir Productos</a>
-      </div>
-    </section>
   </main>
 
-<!-- Footer Mejorado KOU COFE -->
-<footer style="background-color: #000; color: #fff; padding: 40px 20px; font-family: 'Inter', sans-serif;">
-  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
-
-    <!-- Información de contacto -->
-    <div style="flex: 1; min-width: 250px;">
-      <h3 style="margin-bottom: 10px; font-size: 24px;">KOU COFE</h3>
-      <p>El arte del café en tus manos</p>
-      <p>Ubicación: Calle Principal #123</p>
-      <p>Ciudad, País</p>
-      <p>Tel: +123 456 789</p>
-      <p>Horario: L-V 7:00-20:00 | S-D 8:00-19:00</p>
+  <!-- Modal Lightbox para galería -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Cerrar">✕</button>
+    <div class="lightbox-content">
+      <img src="" alt="" />
     </div>
+  </div>
 
-    <!-- Menú -->
-    <div style="flex: 1; min-width: 150px;">
-      <h4 style="margin-bottom: 10px;">Menú</h4>
-      <ul style="list-style: none; padding: 0;">
-        <li><a href="index.html" style="color: #fff; text-decoration: none;">Inicio</a></li>
-        <li><a href="tienda.html" style="color: #fff; text-decoration: none;">Tienda</a></li>
-        <li><a href="contacto.html" style="color: #fff; text-decoration: none;">Contacto</a></li>
-      </ul>
-    </div>
-
-    <!-- Contacto / Redes -->
-    <div style="flex: 1; min-width: 200px;">
-      <h4 style="margin-bottom: 10px;">Contáctanos</h4>
-      <p>Email: <a href="mailto:info@koucofe.com" style="color: #fff; text-decoration: none;">info@koucofe.com</a></p>
-      <div style="margin-top: 10px; display: flex; gap: 15px; font-size: 24px;">
-        <a href="https://facebook.com/koucofe" target="_blank" style="color: #fff;"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://instagram.com/koucofe" target="_blank" style="color: #fff;"><i class="fab fa-instagram"></i></a>
-        <a href="https://twitter.com/koucofe" target="_blank" style="color: #fff;"><i class="fab fa-twitter"></i></a>
+  <!-- Footer semántico -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h3 class="footer-brand">La Confitería Barroca</h3>
+        <p class="muted">Dirección ficticia · Ciudad · País</p>
+      </div>
+      <div class="footer-col">
+        <h4>Síguenos</h4>
+        <div class="social">
+          <a href="#" class="social-link" aria-label="Facebook">
+            <!-- Facebook SVG -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M22 12.07C22 6.48 17.52 2 11.93 2 6.34 2 1.86 6.48 1.86 12.07c0 5.02 3.67 9.18 8.46 9.93v-7.03H8.33v-2.9h3.99V9.18c0-3.95 2.34-6.12 5.93-6.12 1.72 0 3.51.31 3.51.31v3.86h-1.98c-1.95 0-2.56 1.21-2.56 2.46v2.18h4.35l-.7 2.9h-3.65v7.03c4.79-.75 8.46-4.91 8.46-9.93z" fill="#2e2e31"/>
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            <!-- Instagram SVG -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.2a4.8 4.8 0 100 9.6 4.8 4.8 0 000-9.6zm6.4-.9a1.1 1.1 0 11-2.2 0 1.1 1.1 0 012.2 0z" fill="#2e2e31"/>
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Pinterest">
+            <!-- Pinterest SVG -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1.2 14.8c-.5 1.1-1.4 2.1-2.8 2.1-1.9 0-2.8-1.6-2.2-3 .6-1.5 1.8-3.1 1.8-4.8 0-1.2-.6-2.1-1.9-2.1-1.4 0-2.7.9-2.7 3.1 0 1 .4 1.7.4 1.7s-.1.4-.1 1.1c0 1.1-.8 2.5-1.1 3.3-.3.8-.2 1.8 1.1 2.3 1.3.5 3.6.6 5.1-.5 1.5-1.1 2-3.1 2-3.1s.4 0 .6-.9c.2-.9.9-3.5.9-4.8 0-2.2-1.7-4.5-5.1-4.5-3.8 0-6.5 3-6.5 6.8 0 1.2.4 2.3 1.1 3 .1.1.1.2.1.3- .1.5-.4 1.7-.5 2-.1.3-.4.8-1.3.6-.7-.2-1.3-.8-1.6-1.6-.7-1.9-.1-4.1.2-4.7.8-1.6 2.3-3.3 4.9-3.3 2.4 0 3.9 1.6 3.9 3.6 0 2.4-1.4 4.3-3.3 4.3-1 0-1.7-.8-1.5-1.9.3-1.3 1-2.6 1-3.5 0-.8-.4-1.5-1.3-1.5-1 0-1.8 1-1.8 2.4 0 1.1.4 1.8.4 1.8s-.9 3.8-1 4.3c-.2 1 .1 2.6 2 3 1.1.2 2.1 0 3-.5 1.8-1 2.9-3.1 2.9-5.3 0-3.6-2.9-6.7-7-6.7-4 0-6.8 3-6.8 6.5 0 1.2.4 2.4 1 3.2.2.3.2.6.1.9-.1.3-.3 1-.4 1.3-.2.5-.8 1.1-1.6.9-1.2-.3-1.8-1.6-2.1-2.6-.6-2.1-.4-4 .5-5.6C5.3 6 8 4 12 4c4.4 0 7.2 3.1 7.2 6.8 0 4.1-2.6 7.4-6 7.4-1.2 0-1.9-1-1.6-2.3.3-1.3 1.1-3.3 1.1-4.5 0-1.2-.7-2.2-1.9-2.2-1.7 0-3 1.8-3 4 0 1.2.4 2 1 2.6.2.2.2.4.2.6 0 .8-.6 1.6-1.6 1.6-1.3 0-1.9-1.3-1.9-2.6 0-2 .4-4.3 1.1-6 .5-1.3 2-3.4 5.1-3.4 3.8 0 6.1 2.9 6.1 6.4 0 3.5-2.1 6.3-4.9 6.3-1.6 0-2.7-1.1-2.7-2.5 0-1 .4-1.9 1-2.5.1-.1.1-.2.1-.4 0-.7-.6-1.1-1.1-1.1-1.1 0-2 .9-2 2 0 .9.4 1.5.4 1.5s-.7 3.1-.8 3.7c-.2 1 .2 2.7 2.2 3.1 1 .2 1.9.1 2.8-.3 1.8-1 2.8-3 2.8-5.1 0-3.5-2.9-6.7-7-6.7-4 0-6.8 3-6.8 6.5 0 1.2.4 2.4 1 3.2.3.3.3.6.2.9-.1.3-.4 1-.5 1.3-.2.6-.8 1.1-1.6.9-1.2-.3-1.8-1.6-2.1-2.6-.6-2.1-.4-4 .5-5.6C5.3 6 8 4 12 4c4.4 0 7.2 3.1 7.2 6.8 0 4.1-2.6 7.4-6 7.4z" fill="#2e2e31"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <p class="muted"><a href="contacto.html">Formulario de contacto</a></p>
       </div>
     </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> La Confitería Barroca — Todos los derechos reservados.</p>
+    </div>
+  </footer>
 
-  </div>
-
-  <div style="text-align: center; margin-top: 30px; font-size: 14px; color: #ccc;">
-    © 2025 KOU COFE. Todos los derechos reservados.
-  </div>
-</footer>
-
-  <script src="js/script.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
